@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderFilter", "TestTask\OrderFilter.csproj", "{CE921603-1A6A-49D6-B798-7DBC88D897F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderFilter", "TestTask\OrderFilter.csproj", "{CE921603-1A6A-49D6-B798-7DBC88D897F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderFilter.DAL", "OrderFilter.DAL\OrderFilter.DAL.csproj", "{47370A6F-1ADA-4B87-81F0-977D35FE48C9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderFilter.BLL", "OrderFilter.BLL\OrderFilter.BLL.csproj", "{BC65A6DF-793A-4798-9021-D595967F8841}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderFilter.DAL", "OrderFilter.DAL\OrderFilter.DAL.csproj", "{47370A6F-1ADA-4B87-81F0-977D35FE48C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{47370A6F-1ADA-4B87-81F0-977D35FE48C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47370A6F-1ADA-4B87-81F0-977D35FE48C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47370A6F-1ADA-4B87-81F0-977D35FE48C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BC65A6DF-793A-4798-9021-D595967F8841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BC65A6DF-793A-4798-9021-D595967F8841}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BC65A6DF-793A-4798-9021-D595967F8841}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BC65A6DF-793A-4798-9021-D595967F8841}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

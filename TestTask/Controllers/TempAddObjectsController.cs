@@ -41,21 +41,33 @@ namespace OrderFilter.Controllers
         [Route("add-order")]
         public ActionResult AddOrder()
         {
+            List<Order>orders = new List<Order>();
 
-            Random random = new Random();
-            int skipperDist = random.Next(0, _context.CityDistricts.Count());
-            var rDist = _context.CityDistricts.Where(cd => cd.Id == skipperDist).FirstOrDefault();
+            for (int i = 0; i < 100; i++)
+            {
+                Random random = new Random();
+                int skipperDist = random.Next(0, _context.CityDistricts.Count());
+                var rDist = _context.CityDistricts.Skip(skipperDist).Take(1).FirstOrDefault();
 
 
-            double skipperWeight = random.Next(0, 4) + random.NextDouble();
+                double skipperWeight = random.Next(0, 4) + random.NextDouble();
 
-            DateTime startDate = new DateTime(2023, 11, 18);
-            DateTime finishDate = DateTime.Now;
-            var skipperDT = random.NextInt64(startDate.Ticks, finishDate.Ticks);
-            DateTime orderDeliveryDate = new DateTime(skipperDT);
+                skipperWeight = Math.Round(skipperWeight, 2);
+                DateTime startDate = new DateTime(2024, 10, 26);
+                DateTime finishDate = DateTime.Now;
+                var skipperDT = random.NextInt64(startDate.Ticks, finishDate.Ticks);
+                DateTime tempDeliveryDate = new DateTime(skipperDT);
 
-            Order order = new Order { CityDistrict = rDist, Weight = skipperWeight, DeliveryDateTime = orderDeliveryDate };
-            _context.Add(order);
+                var orderDeliveryDate =
+                    new DateTime(tempDeliveryDate.Year, tempDeliveryDate.Month,
+                    tempDeliveryDate.Day, tempDeliveryDate.Hour,
+                    tempDeliveryDate.Minute, tempDeliveryDate.Second);
+
+                Order order = new Order { CityDistrict = rDist, Weight = skipperWeight, DeliveryDateTime = orderDeliveryDate };
+                orders.Add(order);
+            }
+
+            _context.AddRange(orders);
             _context.SaveChanges();
             return Ok();
 

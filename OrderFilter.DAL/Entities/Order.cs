@@ -2,7 +2,7 @@
 {    
     public class Order
     {
-        public Guid Id { get; set; }
+        public long Id { get; set; }
         public double Weight { get; set; }
         public CityDistrict CityDistrict { get; set; }
         public DateTime DeliveryDateTime { get; set; }
