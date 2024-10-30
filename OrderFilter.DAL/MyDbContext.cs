@@ -10,5 +10,22 @@ namespace OrderFilter.DAL
         }
         public DbSet<Order> Orders { get; set; }
         public DbSet<CityDistrict> CityDistricts { get; set; }
+        public DbSet<DeliveryLog> DeliveryLogs { get; set; }
+        public DbSet<DeliveryOrder> DeliveryOrders { get; set; }
+
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+
+
+            modelBuilder.Entity<Order>()
+           .HasMany<DeliveryOrder>()
+           .WithMany(c => c.Orders)
+           .UsingEntity(j => j.ToTable("DeliveryOrdersWithOrders"));
+        }
+
+
     }
 }

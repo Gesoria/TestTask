@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using OrderFilter.DAL;
 using OrderFilter.DAL.Entities;
 
@@ -41,7 +40,7 @@ namespace OrderFilter.Controllers
         [Route("add-order")]
         public ActionResult AddOrder()
         {
-            List<Order>orders = new List<Order>();
+            List<Order> orders = new List<Order>();
 
             for (int i = 0; i < 100; i++)
             {
