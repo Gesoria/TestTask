@@ -13,19 +13,12 @@ namespace OrderFilter.DAL
         public DbSet<DeliveryLog> DeliveryLogs { get; set; }
         public DbSet<DeliveryOrder> DeliveryOrders { get; set; }
 
-
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-
-
             modelBuilder.Entity<Order>()
            .HasMany<DeliveryOrder>()
            .WithMany(c => c.Orders)
            .UsingEntity(j => j.ToTable("DeliveryOrdersWithOrders"));
         }
-
-
     }
 }
